@@ -1,25 +1,32 @@
-import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { Tabs } from 'expo-router';
+import { Slot, SplashScreen } from "expo-router";
+import { useFonts, Orbitron_400Regular, Orbitron_700Bold } from "@expo-google-fonts/orbitron";
+import { Audiowide_400Regular} from "@expo-google-fonts/audiowide";
+import { Aldrich_400Regular } from "@expo-google-fonts/aldrich"
+import { Text, View } from "react-native";
+import { useEffect } from "react";
 
-export default function TabLayout() {
-  return (
-    <Tabs screenOptions={{ tabBarActiveTintColor: 'blue' }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <FontAwesome size={28} name="home" color={color} />,
-          headerShown: false,
-        }}
-      />
-      <Tabs.Screen
-        name="aboutme"
-        options={{
-          title: 'About me',
-          tabBarIcon: ({ color }) => <FontAwesome size={28} name="cog" color={color} />,
-          headerShown: false,
-        }}
-      />
-    </Tabs>
-  );
+SplashScreen.preventAutoHideAsync();
+
+export default function rootLayout() {
+    const [fontsLoaded, fontError] = useFonts({
+        Orbitron_400Regular,
+        Orbitron_700Bold,
+        Audiowide_400Regular,
+        Aldrich_400Regular,
+    });
+
+    useEffect(() => {
+        if (fontsLoaded || fontError) {
+            SplashScreen.hideAsync();
+        } 
+    }, [fontsLoaded, fontError]);
+
+    if (!fontsLoaded) {
+        return (
+            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+                <Text>Loading Fonts...</Text>
+            </View>
+        );
+    }
+    return <Slot />;
 }
