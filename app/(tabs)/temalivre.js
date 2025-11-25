@@ -10,7 +10,7 @@ export default function App() {
     return (
         <SafeAreaView style={[styles.container, { flex: 1 }]}>
             <View style={styles.headerView}>
-                <Text style={styles.headerText}>Exemplo texto</Text>
+                <Text style={styles.headerText}>Sobre o Jogo</Text>
             </View>
             <ScrollView style={{ flex: 1 }}>
 
@@ -34,14 +34,17 @@ export default function App() {
                     </View>
                 </Card>
                 <Card
-                    title="Personagens"
-                    description="Descrição"
+                    title="História"
+                    // description="Descrição"
                     image={img1}
                 >
-                    <Image source={img1} style={styles.imageCardSec} />
-                    <Text>Conteúdo extra do Card 1.</Text>
-                    <Image source={img1} style={styles.imageCardSec} />
-                    <Text>Mais conteúdo do Card 1.</Text>
+                    <View style={styles.row}>
+                        {/* <Image source={img2} style={styles.imageCardSec} /> */}
+                        <View style={styles.cardInterno}>
+                            <Text style={styles.cardTitle}>Sam</Text>
+                            <Text style={styles.cardDescription}>Conteúdo extra do Card 1.</Text>
+                        </View>
+                    </View>
                 </Card>
 
             </ScrollView>
@@ -53,7 +56,7 @@ export default function App() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#17231dff',
+        backgroundColor: '#000000',
         // alignItems: 'center',
         // justifyContent: 'center',
     },
@@ -61,7 +64,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'flex-start',
         marginBottom: 10,
-        
+        padding: 10,
     },
     headerView: {
         alignItems: 'center',
