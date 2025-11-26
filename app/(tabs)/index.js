@@ -5,7 +5,7 @@ export default function Page() {
     <View style={styles.container}>
       <View style={styles.main}>
         <Text style={styles.title}>Death Stranding</Text>
-        <Text style={styles.subtitle}>E o Futuro Distópico</Text>
+        <Text style={styles.subtitle}>E o Futuro Tecnológico</Text>
       </View>
     </View>
   );

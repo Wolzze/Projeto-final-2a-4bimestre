@@ -1,6 +1,7 @@
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Tabs } from 'expo-router';
 import { useEffect } from 'react';
+import Entypo from '@expo/vector-icons/Entypo';
 import { Platform } from 'react-native';
 
 export default function TabLayout() {
@@ -8,7 +9,7 @@ export default function TabLayout() {
     Platform.OS === 'web' ? document.title = "DDM 2025/2" : null
   }, []);
   return (
-    <Tabs screenOptions={{tabBarStyle: { backgroundColor: '#000000ff' }, tabBarActiveTintColor: 'white' }}>
+    <Tabs screenOptions={{tabBarStyle: { backgroundColor: '#141414' }, tabBarActiveTintColor: 'white' }}>
       <Tabs.Screen
         name="index"
         options={{
@@ -21,7 +22,7 @@ export default function TabLayout() {
         name="temalivre"
         options={{
           title: 'Jogo',
-          tabBarIcon: ({ color }) => <FontAwesome size={28} name="book" color={color} />,
+          tabBarIcon: ({ color }) => <Entypo name="game-controller" size={28} color={color} />,
           headerShown: false,
         }}
       />

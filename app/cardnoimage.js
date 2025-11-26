@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { Image, ScrollView, StyleSheet, Text, View, Animated, TouchableOpacity, Platform,  } from 'react-native';
+import { Image, ScrollView, StyleSheet, Text, View, Animated, TouchableOpacity, Platform,} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRef, useState } from 'react';
 
@@ -81,15 +81,15 @@ const styles = StyleSheet.create({
         padding: 12,
     },
     cardTitle: {
-        fontSize: 18,
-        fontWeight: 'bold',
+        fontSize: Platform.OS === 'web' ? 30 : 22,
+        // fontWeight: 'bold',
         marginTop: 8,
         marginBottom: 4,
         color: '#ffffffff',
         fontFamily: 'Orbitron_700Bold',
     },
     cardDescription: {
-        fontSize: 14,
+        fontSize: Platform.OS === 'web' ? 22 : 18,
         color: '#cfcfcfff',
         fontFamily: 'aldrich_400Regular',
     },

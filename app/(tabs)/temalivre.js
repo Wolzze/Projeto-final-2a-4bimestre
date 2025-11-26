@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { Image, ScrollView, StyleSheet, Text, View, Platform } from 'react-native'; // Importar Platform
+import { Image, ScrollView, StyleSheet, Text, View, Platform } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import img1 from '../../assets/background.png';
 import img2 from '../../assets/sam.png';
@@ -111,8 +111,6 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#000000ff',
     },
-
-
     webRowContainer: {
         flexDirection: 'row',
         flexWrap: 'wrap',
@@ -139,9 +137,11 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         marginTop: 16,
+        backgroundColor: '#141414',
+        padding: 10,
     },
     headerText: {
-        fontSize: 34,
+        fontSize: Platform.OS === 'web' ? 40 : 32,
         fontFamily: 'Orbitron_700Bold',
         margin: 16,
         color: '#ffffffff',
@@ -150,9 +150,10 @@ const styles = StyleSheet.create({
         paddingBottom: 8,
     },
     imageCardSec: {
-        width: 100,
-        height: 100,
-        borderRadius: 8,
+        width: Platform.OS === 'web' ? 180 : 150,
+        height: Platform.OS === 'web' ?  180 : 150,
+        borderRadius: 4,
+        marginBottom: 15,
     },
     cardInterno: {
         flexDirection: 'column',
@@ -162,13 +163,13 @@ const styles = StyleSheet.create({
         marginBottom: 16,
     },
     cardTitle: {
-        fontSize: 18,
+        fontSize: Platform.OS === 'web' ? 30 : 22,
         fontWeight: 'bold',
         marginBottom: 4,
         color: '#ffffffff',
     },
     cardDescription: {
-        fontSize: 14,
+        fontSize: Platform.OS === 'web' ? 20 : 15,
         color: '#cfcfcfff',
         paddingRight: 10
     },

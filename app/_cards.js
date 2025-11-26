@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
     },
     imageCardPrincipal: {
         width: "100%",
-        height: 150,
+        height: Platform.OS === 'web' ? 300 : 150,
         borderBottomLeftRadius: 0,
         borderBottomRightRadius: 0,
         resizeMode: 'cover',
@@ -81,15 +81,14 @@ const styles = StyleSheet.create({
         padding: 12,
     },
     cardTitle: {
-        fontSize: 18,
-        // fontWeight: 'bold',
+        fontSize: Platform.OS === 'web' ? 30 : 22,
         marginTop: 8,
         marginBottom: 4,
         color: '#ffffffff',
         fontFamily: 'Orbitron_700Bold',
     },
     cardDescription: {
-        fontSize: 14,
+        fontSize: Platform.OS === 'web' ? 22 : 18,
         color: '#cfcfcfff',
         fontFamily: 'aldrich_400Regular',
     },

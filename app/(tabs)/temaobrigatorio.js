@@ -38,20 +38,15 @@ export default function App() {
             </View>
             <ScrollView style={{ flex: 1 }}>
 
-                <CardNoImage
-                    title="Tecnologia Pós-Apocalíptica"
-                    description="A relação entre tecnologia e reconexão em Death Stranding"
-                    >
-
-                    <PersonagensContainer>
-                        <View style={styles.cardInterno}>
-                            <Text style={styles.cardDescription}>
+                <View style={styles.textoIntroducao}>
+                    <Text style={styles.cardTitle}>Tecnologia Pós-Apocalíptica</Text>
+                    <Text style={[styles.cardDescription, { borderBottomColor: '#ffffff', borderBottomWidth: 0.5, marginRight: 20,
+                        marginBottom: 5, fontFamily: 'aldrich_400Regular'
+                     }]}>A relação entre tecnologia e reconexão em Death Stranding</Text>
+                    <Text style={styles.cardDescription}>
                                 Death Stranding projeta um futuro onde a tecnologia é tanto a causa quanto a solução para a fragmentação humana. O jogo apresenta conceitos que, embora fantásticos, ressoam com a ciência moderna em áreas como inteligência artificial, robótica vestível (exoesqueletos) e a necessidade de infraestrutura de comunicação radicalmente avançada para superar o isolamento geográfico e social.
                             </Text>
-                        </View>
-                    </PersonagensContainer>
-
-                </CardNoImage>
+                </View>
 
                 <CardNoImage
                     title="Pilares da Inovação"
@@ -59,11 +54,17 @@ export default function App() {
                     image={img1}>
 
                     <PersonagensContainer>
+                        <View style={styles.cardInterno}>
                         <Text style={styles.cardDescription}>
-                            1. Rede Quiral: Uma rede de comunicação avançada que permite a transferência instantânea de dados e até mesmo a materialização de objetos através do espaço, simbolizando a importância da conectividade.<br/><br/>
-                            2. Exoesqueletos e Equipamentos Avançados: Ferramentas que aumentam as capacidades humanas, refletindo a tendência atual de integração homem-máquina para superar limitações físicas.<br/><br/>
-                            3. Inteligência Artificial e Drones: Utilizados para assistência em entregas e exploração, antecipando o papel crescente da IA e da automação na vida cotidiana.<br/><br/>
+                            1. Rede Quiral: Uma rede de comunicação avançada que permite a transferência instantânea de dados e até mesmo a materialização de objetos através do espaço, simbolizando a importância da conectividade.
+                            </Text>
+                            <Text style={styles.cardDescription}>
+                            2. Exoesqueletos e Equipamentos Avançados: Ferramentas que aumentam as capacidades humanas, refletindo a tendência atual de integração homem-máquina para superar limitações físicas.
+                            </Text>
+                            <Text style={styles.cardDescription}>
+                            3. Inteligência Artificial e Drones: Utilizados para assistência em entregas e exploração, antecipando o papel crescente da IA e da automação na vida cotidiana.
                         </Text>
+                        </View>
                     </PersonagensContainer>
 
                 </CardNoImage>
@@ -95,6 +96,10 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#000000ff',
     },
+    textoIntroducao: {
+        padding: 20,
+        marginLeft: 10,
+    },
     webRowContainer: {
         flexDirection: 'row',
         flexWrap: 'wrap',
@@ -118,9 +123,11 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         marginTop: 16,
+        backgroundColor: '#141414',
+        padding: 10,
     },
     headerText: {
-        fontSize: 34,
+        fontSize: Platform.OS === 'web' ? 40 : 32,
         fontFamily: 'Orbitron_700Bold',
         margin: 16,
         color: '#ffffffff',
@@ -141,15 +148,16 @@ const styles = StyleSheet.create({
         marginBottom: 16,
     },
     cardTitle: {
-        fontSize: 18,
-        fontWeight: 'bold',
+        fontSize: Platform.OS === 'web' ? 30 : 22,
+        // fontWeight: 'bold',
+        fontFamily: 'Orbitron_700Bold',
         marginBottom: 4,
         color: '#ffffffff',
     },
     cardDescription: {
-        fontSize: 14,
+        fontSize: Platform.OS === 'web' ? 22 : 18,
         color: '#cfcfcfff',
-        paddingRight: 10
+        paddingRight: 10,
     },
     // Você pode ter mais estilos que não foram listados aqui,
     // mas o essencial para o layout está mantido.
