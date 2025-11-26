@@ -1,9 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
-import { Image, ScrollView, StyleSheet, Text, View, Animated, TouchableOpacity,  } from 'react-native';
+import { Image, ScrollView, StyleSheet, Text, View, Animated, TouchableOpacity, Platform,  } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRef, useState } from 'react';
 
-export default function Card({ title, description, image, children }) {
+export default function CardNoImage({ title, description, children }) {
 
     const [expanded, setExpanded] = useState(false);
     const animation = useRef(new Animated.Value(0)).current;
@@ -29,7 +29,7 @@ export default function Card({ title, description, image, children }) {
         <View style={styles.cardView}>
 
             <TouchableOpacity onPress={toggleExpand}>
-                <Image source={image} style={styles.imageCardPrincipal} />
+                {/* <Image source={image} style={styles.imageCardPrincipal} /> */}
 
                 <View style={styles.textCardContainer}>
                     <Text style={styles.cardTitle}>{title}</Text>
@@ -55,18 +55,21 @@ export default function Card({ title, description, image, children }) {
 
 const styles = StyleSheet.create({
     cardView: {
-        backgroundColor: "#fff",
+        backgroundColor: "#000000ff",
         borderRadius: 8,
-        margin: 16,
+        margin: 20,
         overflow: "hidden",
+        borderColor: '#ffffffff',
+        borderWidth: 0.7,
     },
-    imageCardPrincipal: {
-        width: "100%",
-        height: 150,
-        borderRadius: 8,
-        resizeMode: 'cover',
-        // marginRight: 16,
-    },
+    // imageCardPrincipal: {
+    //     width: "100%",
+    //     height: 150,
+    //     borderBottomLeftRadius: 0,
+    //     borderBottomRightRadius: 0,
+    //     resizeMode: 'cover',
+    //     // marginRight: 16,
+    // },
     imageCardSec: {
         width: 100,
         height: 100,
@@ -82,17 +85,20 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginTop: 8,
         marginBottom: 4,
+        color: '#ffffffff',
+        fontFamily: 'Orbitron_700Bold',
     },
     cardDescription: {
         fontSize: 14,
-        color: '#666',
+        color: '#cfcfcfff',
+        fontFamily: 'aldrich_400Regular',
     },
     content: {
         overflow: 'hidden',
         marginTop: 8,
     },
     innerContent: {
-        paddingVertical: 8,
+        paddingVertical: 10,
     },
 
 });

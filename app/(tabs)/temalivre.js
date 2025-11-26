@@ -1,47 +1,103 @@
 import { StatusBar } from 'expo-status-bar';
-import { Image, ScrollView, StyleSheet, Text, View, Animated, TouchableOpacity, Platform } from 'react-native';
+import { Image, ScrollView, StyleSheet, Text, View, Platform } from 'react-native'; // Importar Platform
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { useRef, useState } from 'react';
 import img1 from '../../assets/background.png';
 import img2 from '../../assets/sam.png';
-import Card from './cards.js'
+import img3 from '../../assets/amelie.png';
+import Card from '../_cards.js'
+
+const PersonagemCardSecundario = ({ nome, descricao, imagem }) => (
+
+    <View style={styles.personagemItem}>
+        <Image source={imagem} style={styles.imageCardSec} />
+        <View style={styles.cardInterno}>
+            <Text style={styles.cardTitle}>{nome}</Text>
+            <Text style={styles.cardDescription}>{descricao}</Text>
+        </View>
+    </View>
+);
+
+const PersonagensContainer = ({ children }) => {
+    const webContainerStyle = Platform.OS === 'web' ? styles.webRowContainer : {};
+
+    return (
+        <View style={webContainerStyle}>
+            {children}
+        </View>
+    );
+};
 
 export default function App() {
     return (
         <SafeAreaView style={[styles.container, { flex: 1 }]}>
             <View style={styles.headerView}>
-                <Text style={styles.headerText}>Exemplo texto</Text>
+                <Text style={styles.headerText}>Características</Text>
             </View>
             <ScrollView style={{ flex: 1 }}>
+
+                <Card
+                    title="História"
+                    description="Breve resumo da história do jogo"
+                    image={img1}>
+
+                    <PersonagensContainer>
+                        <View style={styles.cardInterno}>
+                            <Text style={styles.cardDescription}>
+                                Death Stranding é um jogo de ação e aventura desenvolvido pela Kojima Productions e dirigido por Hideo Kojima. Lançado em 2019, o jogo se passa em um futuro pós-apocalíptico nos Estados Unidos, onde eventos misteriosos conhecidos como "Death Stranding" causaram a separação entre os vivos e os mortos. Os jogadores assumem o papel de Sam Porter Bridges, um entregador encarregado de reconectar cidades isoladas e reconstruir a sociedade, enfrentando criaturas sobrenaturais chamadas "Entidades Encalhadas" e lidando com temas profundos como a conexão humana, a solidão e a vida após a morte.
+                            </Text>
+                        </View>
+                    </PersonagensContainer>
+
+                </Card>
 
                 <Card
                     title="Personagens"
                     description="Personagens principais"
                     image={img1}>
-                    <View style={styles.row}>
-                        <Image source={img2} style={styles.imageCardSec} />
-                        <View style={styles.cardInterno}>
-                            <Text style={styles.cardTitle}>Sam</Text>
-                            <Text style={styles.cardDescription}>Conteúdo extra do Card 1.</Text>
-                        </View>
-                    </View>
-                    <View style={styles.row}>
-                        <Image source={img2} style={styles.imageCardSec} />
-                        <View style={styles.cardInterno}>
-                            <Text style={styles.cardTitle}>Sam</Text>
-                            <Text style={styles.cardDescription}>Conteúdo extra do Card 1.</Text>
-                        </View>
-                    </View>
+
+                    <PersonagensContainer>
+                        <PersonagemCardSecundario
+                            nome="Sam Porter Bridges"
+                            descricao="É o protagonista do jogo e um entregador lendário (Porter). Ele é recrutado para viajar pelo que resta dos Estados Unidos (UCA) para reconectar as cidades isoladas à Rede Quiral."
+                            imagem={img2}
+                        />
+                        <PersonagemCardSecundario
+                            nome="Amelie Bridges"
+                            descricao="É a irmã de Sam e a presidente eleita dos Estados Unidos. Ela é quem inicia a missão de Sam para viajar pelo país, mas está presa no litoral ocidental, na chamada 'Praia'."
+                            imagem={img3}
+                        />
+                        <PersonagemCardSecundario
+                            nome="Fragile"
+                            descricao="A líder do grupo de entregas privado Fragile Express. Ela tem a habilidade de se teletransportar para diferentes 'Praias' e se torna uma importante aliada de Sam, com um passado misterioso."
+                            imagem={img2}
+                        />
+                        <PersonagemCardSecundario
+                            nome="Die-Hardman"
+                            descricao="O braço direito da ex-presidente Bridget Bridges e mais tarde um dos principais líderes da organização Bridges. Ele frequentemente se comunica com Sam para orientá-lo em sua missão."
+                            imagem={img2}
+                        />
+                        <PersonagemCardSecundario
+                            nome="Higgs Monaghan"
+                            descricao="O principal antagonista do jogo, líder do grupo terrorista separatista 'Homo Demens'. Ele possui habilidades DOOMS elevadas, que o permitem controlar as Entidades Encalhadas (EEs), e busca impedir a reunificação da América."
+                            imagem={img2}
+                        />
+                    </PersonagensContainer>
+
                 </Card>
+
                 <Card
-                    title="Personagens"
-                    description="Descrição"
-                    image={img1}
-                >
-                    <Image source={img1} style={styles.imageCardSec} />
-                    <Text>Conteúdo extra do Card 1.</Text>
-                    <Image source={img1} style={styles.imageCardSec} />
-                    <Text>Mais conteúdo do Card 1.</Text>
+                    title="Mensagem"
+                    description="Mensagem principal do jogo"
+                    image={img1}>
+
+                    <PersonagensContainer>
+                        <View style={styles.cardInterno}>
+                            <Text style={styles.cardDescription}>
+                                A mensagem principal de Death Stranding gira em torno da importância da conexão humana e da superação da solidão em um mundo fragmentado. O jogo enfatiza a ideia de que, mesmo em meio a adversidades e isolamento, as pessoas podem se unir, construir pontes e criar laços que dão sentido à vida. A narrativa explora temas como empatia, cooperação e a interdependência entre os indivíduos para reconstruir a sociedade e encontrar esperança no futuro.
+                            </Text>
+                        </View>
+                    </PersonagensContainer>
+
                 </Card>
 
             </ScrollView>
@@ -53,75 +109,68 @@ export default function App() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#17231dff',
-        // alignItems: 'center',
-        // justifyContent: 'center',
+        backgroundColor: '#000000ff',
     },
-    row: {
+
+
+    webRowContainer: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        gap: 16,
+        paddingLeft: 10,
+    },
+
+    personagemItem: {
         flexDirection: 'row',
         alignItems: 'flex-start',
         marginBottom: 10,
-        
+        ...Platform.select({
+            web: {
+                width: 'calc(50% - 8px)', // 50% da largura menos metade do gap
+            },
+            default: {
+                paddingLeft: 10, // Mantém o padding no App para alinhamento
+            }
+        })
     },
+
+    // ... o restante dos seus estilos
     headerView: {
         alignItems: 'center',
         justifyContent: 'center',
         marginTop: 16,
     },
     headerText: {
-        fontSize: 24,
-        // fontWeight: 'bold',
+        fontSize: 34,
         fontFamily: 'Orbitron_700Bold',
         margin: 16,
         color: '#ffffffff',
-    },
-    cardView: {
-        // flexDirection: 'row',
-        // padding: 12,
-        // backgroundColor: '#ffffffff',
-        // borderRadius: 8,
-        // alignItems: 'center',
-        // shadowColor: '#000000ff',
-        // shadowOffset: { width: 0, height: 2 },
-        // shadowRadius: 6,
-        // shadowOpacity: 0.3,
-        // margin: 16,
-    },
-    imageCardPrincipal: {
-        width: "100%",
-        height: 150,
-        borderRadius: 8,
-        // marginRight: 16,
+        borderBottomWidth: 1,
+        borderBottomColor: '#ffffffff',
+        paddingBottom: 8,
     },
     imageCardSec: {
         width: 100,
         height: 100,
         borderRadius: 8,
-        // marginRight: 16,
-    },
-    textCardContainer: {
-        flex: 1,
     },
     cardInterno: {
         flexDirection: 'column',
-        gap: 4,
         marginLeft: 10,
+        flex: 1,
+        maxWidth: '100%',
+        marginBottom: 16,
     },
     cardTitle: {
         fontSize: 18,
         fontWeight: 'bold',
         marginBottom: 4,
+        color: '#ffffffff',
     },
     cardDescription: {
         fontSize: 14,
-        color: '#666',
+        color: '#cfcfcfff',
+        paddingRight: 10
     },
-    content: {
-        overflow: 'hidden',
-        // marginTop: 8,
-    },
-    innerContent: {
-        paddingVertical: 8,
-    },
-
+    // ...
 });

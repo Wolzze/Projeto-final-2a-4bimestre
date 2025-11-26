@@ -26,9 +26,9 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="aboutme"
+        name="temaobrigatorio"
         options={{
-          title: 'About me',
+          title: 'Futuro Tecnológico',
           tabBarIcon: ({ color }) => <FontAwesome size={28} name="cog" color={color} />,
           headerShown: false,
         }}
