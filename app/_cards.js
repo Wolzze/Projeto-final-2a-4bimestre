@@ -56,11 +56,12 @@ export default function Card({ title, description, image, children }) {
 const styles = StyleSheet.create({
     cardView: {
         backgroundColor: "#000000ff",
-        borderRadius: 8,
+        borderRadius: Platform.OS === 'web' ? 8 : 6,
         margin: 20,
         overflow: "hidden",
         borderColor: '#ffffffff',
         borderWidth: 0.7,
+        marginTop: 30,
     },
     imageCardPrincipal: {
         width: "100%",
@@ -84,12 +85,12 @@ const styles = StyleSheet.create({
         fontSize: Platform.OS === 'web' ? 30 : 22,
         marginTop: 8,
         marginBottom: 4,
-        color: '#ffffffff',
+        color: '#dba100',
         fontFamily: 'Orbitron_700Bold',
     },
     cardDescription: {
         fontSize: Platform.OS === 'web' ? 22 : 18,
-        color: '#cfcfcfff',
+        color: '#ffffff',
         fontFamily: 'aldrich_400Regular',
     },
     content: {

@@ -43,7 +43,7 @@ export default function App() {
                     <Text style={[styles.cardDescription, { borderBottomColor: '#ffffff', borderBottomWidth: 0.5, marginRight: 20,
                         marginBottom: 5, fontFamily: 'aldrich_400Regular'
                      }]}>A relação entre tecnologia e reconexão em Death Stranding</Text>
-                    <Text style={styles.cardDescription}>
+                    <Text style={[styles.cardDescription]}>
                                 Death Stranding projeta um futuro onde a tecnologia é tanto a causa quanto a solução para a fragmentação humana. O jogo apresenta conceitos que, embora fantásticos, ressoam com a ciência moderna em áreas como inteligência artificial, robótica vestível (exoesqueletos) e a necessidade de infraestrutura de comunicação radicalmente avançada para superar o isolamento geográfico e social.
                             </Text>
                 </View>
@@ -99,6 +99,7 @@ const styles = StyleSheet.create({
     textoIntroducao: {
         padding: 20,
         marginLeft: 10,
+        marginTop:  Platform.OS === 'web' ? 30 : 10,
     },
     webRowContainer: {
         flexDirection: 'row',
@@ -122,17 +123,18 @@ const styles = StyleSheet.create({
     headerView: {
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: 16,
-        backgroundColor: '#141414',
+        // marginTop: 16,
+        backgroundColor: '#dba100',
         padding: 10,
+        borderBottomLeftRadius: Platform.OS === 'web' ? 60 : 30,
     },
     headerText: {
         fontSize: Platform.OS === 'web' ? 40 : 32,
         fontFamily: 'Orbitron_700Bold',
         margin: 16,
-        color: '#ffffffff',
+        color: '#000000',
         borderBottomWidth: 1,
-        borderBottomColor: '#ffffffff',
+        borderBottomColor: '#000000',
         paddingBottom: 8,
     },
     imageCardSec: {
@@ -152,11 +154,11 @@ const styles = StyleSheet.create({
         // fontWeight: 'bold',
         fontFamily: 'Orbitron_700Bold',
         marginBottom: 4,
-        color: '#ffffffff',
+        color: '#dba100',
     },
     cardDescription: {
         fontSize: Platform.OS === 'web' ? 22 : 18,
-        color: '#cfcfcfff',
+        color: '#ffffff',
         paddingRight: 10,
     },
     // Você pode ter mais estilos que não foram listados aqui,

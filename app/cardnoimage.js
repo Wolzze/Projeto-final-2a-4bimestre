@@ -85,12 +85,12 @@ const styles = StyleSheet.create({
         // fontWeight: 'bold',
         marginTop: 8,
         marginBottom: 4,
-        color: '#ffffffff',
+        color: '#dba100',
         fontFamily: 'Orbitron_700Bold',
     },
     cardDescription: {
         fontSize: Platform.OS === 'web' ? 22 : 18,
-        color: '#cfcfcfff',
+        color: '#ffffff',
         fontFamily: 'aldrich_400Regular',
     },
     content: {

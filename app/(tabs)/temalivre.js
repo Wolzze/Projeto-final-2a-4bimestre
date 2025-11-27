@@ -136,17 +136,18 @@ const styles = StyleSheet.create({
     headerView: {
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: 16,
-        backgroundColor: '#141414',
+        // marginTop: 16,
+        backgroundColor: '#dba100',
         padding: 10,
+        borderBottomLeftRadius: Platform.OS === 'web' ? 60 : 30,
     },
     headerText: {
         fontSize: Platform.OS === 'web' ? 40 : 32,
         fontFamily: 'Orbitron_700Bold',
         margin: 16,
-        color: '#ffffffff',
+        color: '#0000000',
         borderBottomWidth: 1,
-        borderBottomColor: '#ffffffff',
+        borderBottomColor: '#000000',
         paddingBottom: 8,
     },
     imageCardSec: {
