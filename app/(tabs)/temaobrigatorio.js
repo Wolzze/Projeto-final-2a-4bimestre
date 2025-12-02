@@ -41,7 +41,7 @@ export default function App() {
                 <View style={styles.textoIntroducao}>
                     <Text style={styles.cardTitle}>Tecnologia Pós-Apocalíptica</Text>
                     <Text style={[styles.cardDescription, { borderBottomColor: '#ffffff', borderBottomWidth: 0.5, marginRight: 20,
-                        marginBottom: 5, fontFamily: 'aldrich_400Regular'
+                        marginBottom: 5, fontFamily: 'Aldrich_400Regular'
                      }]}>A relação entre tecnologia e reconexão em Death Stranding</Text>
                     <Text style={[styles.cardDescription]}>
                                 Death Stranding projeta um futuro onde a tecnologia é tanto a causa quanto a solução para a fragmentação humana. O jogo apresenta conceitos que, embora fantásticos, ressoam com a ciência moderna em áreas como inteligência artificial, robótica vestível (exoesqueletos) e a necessidade de infraestrutura de comunicação radicalmente avançada para superar o isolamento geográfico e social.

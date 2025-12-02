@@ -35,6 +35,6 @@ const styles = StyleSheet.create({
   subtitle: {
     fontSize: Platform.OS === 'web' ? 36 : 26,
     color: "#9e9e9eff",
-    fontFamily: "aldrich_400Regular",
+    fontFamily: "Aldrich_400Regular",
   },
 });
