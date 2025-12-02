@@ -55,7 +55,7 @@ export default function CardNoImage({ title, description, children }) {
 
 const styles = StyleSheet.create({
     cardView: {
-        backgroundColor: "#000000ff",
+        backgroundColor: "#141414ff",
         borderRadius: 8,
         margin: 20,
         overflow: "hidden",

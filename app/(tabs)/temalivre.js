@@ -4,6 +4,11 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import img1 from '../../assets/background.png';
 import img2 from '../../assets/sam.png';
 import img3 from '../../assets/amelie.png';
+import img4 from '../../assets/Fragile.png';
+import img5 from '../../assets/Diehardman.png';
+import img6 from '../../assets/Higgs.png';
+import bg from '../../assets/bg2.png';
+import bg2 from '../../assets/bg3.png';
 import Card from '../_cards.js'
 
 const PersonagemCardSecundario = ({ nome, descricao, imagem }) => (
@@ -30,10 +35,10 @@ const PersonagensContainer = ({ children }) => {
 export default function App() {
     return (
         <SafeAreaView style={[styles.container, { flex: 1 }]}>
+            <ScrollView style={{ flex: 1 }}>
             <View style={styles.headerView}>
                 <Text style={styles.headerText}>Características</Text>
             </View>
-            <ScrollView style={{ flex: 1 }}>
 
                 <Card
                     title="História"
@@ -53,7 +58,7 @@ export default function App() {
                 <Card
                     title="Personagens"
                     description="Personagens principais"
-                    image={img1}>
+                    image={bg}>
 
                     <PersonagensContainer>
                         <PersonagemCardSecundario
@@ -69,17 +74,17 @@ export default function App() {
                         <PersonagemCardSecundario
                             nome="Fragile"
                             descricao="A líder do grupo de entregas privado Fragile Express. Ela tem a habilidade de se teletransportar para diferentes 'Praias' e se torna uma importante aliada de Sam, com um passado misterioso."
-                            imagem={img2}
+                            imagem={img4}
                         />
                         <PersonagemCardSecundario
                             nome="Die-Hardman"
                             descricao="O braço direito da ex-presidente Bridget Bridges e mais tarde um dos principais líderes da organização Bridges. Ele frequentemente se comunica com Sam para orientá-lo em sua missão."
-                            imagem={img2}
+                            imagem={img5}
                         />
                         <PersonagemCardSecundario
                             nome="Higgs Monaghan"
                             descricao="O principal antagonista do jogo, líder do grupo terrorista separatista 'Homo Demens'. Ele possui habilidades DOOMS elevadas, que o permitem controlar as Entidades Encalhadas (EEs), e busca impedir a reunificação da América."
-                            imagem={img2}
+                            imagem={img6}
                         />
                     </PersonagensContainer>
 
@@ -88,7 +93,7 @@ export default function App() {
                 <Card
                     title="Mensagem"
                     description="Mensagem principal do jogo"
-                    image={img1}>
+                    image={bg2}>
 
                     <PersonagensContainer>
                         <View style={styles.cardInterno}>
@@ -140,6 +145,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#dba100',
         padding: 10,
         borderBottomLeftRadius: Platform.OS === 'web' ? 60 : 30,
+        borderBottomRightRadius: Platform.OS === 'web' ? 60 : 30,
     },
     headerText: {
         fontSize: Platform.OS === 'web' ? 40 : 32,

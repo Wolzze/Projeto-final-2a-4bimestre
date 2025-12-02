@@ -34,6 +34,14 @@ export default function TabLayout() {
           headerShown: false,
         }}
       />
+      <Tabs.Screen
+        name="aboutme"
+        options={{
+          title: 'Sobre Mim',
+          tabBarIcon: ({ color }) => <FontAwesome size={28} name="user" color={color} />,
+          headerShown: false,
+        }}
+      />
     </Tabs>
   );
 }

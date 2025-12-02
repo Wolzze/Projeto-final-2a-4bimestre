@@ -33,10 +33,10 @@ const PersonagensContainer = ({ children }) => {
 export default function App() {
     return (
         <SafeAreaView style={[styles.container, { flex: 1 }]}>
+            <ScrollView style={{ flex: 1 }}>
             <View style={styles.headerView}>
                 <Text style={styles.headerText}>Futuro Tecnológico</Text>
             </View>
-            <ScrollView style={{ flex: 1 }}>
 
                 <View style={styles.textoIntroducao}>
                     <Text style={styles.cardTitle}>Tecnologia Pós-Apocalíptica</Text>
@@ -78,6 +78,21 @@ export default function App() {
                         <View style={styles.cardInterno}>
                             <Text style={styles.cardDescription}>
                                 A principal mensagem tecnológica do jogo é que a inovação só tem valor quando serve para a reconexão. O futuro não é definido pelas máquinas ou redes, mas pela capacidade humana de usar essas ferramentas para construir laços, superar a solidão e manter a esperança em um mundo em constante mudança.
+                            </Text>
+                        </View>
+                    </PersonagensContainer>
+
+                </CardNoImage>
+
+                <CardNoImage
+                    title="Mensagem Tecnológica"
+                    description="A inovação a serviço da reconexão"
+                    image={img1}>
+
+                    <PersonagensContainer>
+                        <View style={styles.cardInterno}>
+                            <Text style={styles.cardDescription}>
+                                Death Stranding nos lembra que, embora a tecnologia possa parecer distante ou até ameaçadora, seu verdadeiro potencial reside em sua capacidade de unir as pessoas. Em um mundo cada vez mais digital e interconectado, o jogo destaca a importância de usar a inovação para fortalecer os laços humanos e construir um futuro onde a conexão seja o alicerce da sociedade.
                             </Text>
                         </View>
                     </PersonagensContainer>
@@ -127,6 +142,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#dba100',
         padding: 10,
         borderBottomLeftRadius: Platform.OS === 'web' ? 60 : 30,
+        borderBottomRightRadius: Platform.OS === 'web' ? 60 : 30,
     },
     headerText: {
         fontSize: Platform.OS === 'web' ? 40 : 32,
