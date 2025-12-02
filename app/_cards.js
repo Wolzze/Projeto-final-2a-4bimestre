@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
     cardDescription: {
         fontSize: Platform.OS === 'web' ? 22 : 18,
         color: '#ffffff',
-        fontFamily: 'aldrich_400Regular',
+        fontFamily: 'Aldrich_400Regular',
     },
     content: {
         overflow: 'hidden',
